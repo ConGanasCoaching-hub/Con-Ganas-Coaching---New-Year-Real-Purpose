@@ -16,14 +16,14 @@ const Scarcity: React.FC<ScarcityProps> = ({ onApply }) => {
           Final Availability Notice
         </div>
         
-        <h2 className="text-4xl md:text-6xl font-bold leading-tight">I Am Only Taking 5 New Clients for January.</h2>
+        <h2 className="text-4xl md:text-6xl font-bold leading-[1.2] tracking-[-0.01em]">I Am Only Taking 5 New Clients for January.</h2>
         
-        <div className="space-y-6 text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+        <div className="space-y-6 text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto leading-[1.6] tracking-normal">
           <p>
             Because I provide a luxury, bespoke experience, I cannot take on everyone. I pour my energy into every single client to ensure they reclaim their confidence.
           </p>
           <p className="font-semibold italic">
-            If you want to start 2026 with Con Ganas—with true intention and zeal—you need to secure your spot now. 
+            If you want to start 2026 with Con Ganas with true intention and zeal, you need to secure your spot now. 
           </p>
         </div>
         

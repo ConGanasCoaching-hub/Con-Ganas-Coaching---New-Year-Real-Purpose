@@ -48,8 +48,8 @@ const ClientCarousel: React.FC = () => {
           <div className="inline-block px-3 py-1 bg-[#AF630B]/10 rounded-md">
             <span className="text-[#AF630B] text-[10px] font-black tracking-widest uppercase">The Results</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#151819]">The Proof of Purpose.</h2>
-          <p className="text-[#BCBFCC] max-w-md mx-auto md:mx-0 font-light italic">Real people, the same mission: To transform with Con Ganas.</p>
+          <h2 className="text-3xl md:text-5xl font-black text-[#151819] leading-[1.2] tracking-[-0.01em]">The Proof of Purpose.</h2>
+          <p className="text-[#BCBFCC] max-w-md mx-auto md:mx-0 font-light italic leading-[1.6] tracking-normal">Real people, the same mission: To transform with Con Ganas.</p>
         </div>
         
         <div className="flex gap-4 justify-center md:justify-end">

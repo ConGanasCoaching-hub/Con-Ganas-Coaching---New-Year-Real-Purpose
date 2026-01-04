@@ -7,61 +7,84 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onApply }) => {
-  const logoId = '18tgSvGF9RBWWiF1o9_PGSujE8RHrSRT7';
-  const logoUrl = `https://lh3.googleusercontent.com/d/${logoId}`;
+  const logoUrl = "/logo-all-white.png";
   const coachImageUrl = "https://lh3.googleusercontent.com/d/1ZsFqhvE08HU1cBb5qRR6iIrTcSK2hn7c";
 
   return (
     <section className="relative min-h-[100dvh] flex flex-col bg-[#0f1112] px-4 sm:px-6 overflow-hidden">
+      <style>{`
+        @keyframes moveVertical {
+          0% { transform: translateY(-50%); }
+          50% { transform: translateY(50%); }
+          100% { transform: translateY(-50%); }
+        }
+
+        @keyframes moveHorizontal {
+          0% { transform: translateX(-50%) translateY(-10%); }
+          50% { transform: translateX(50%) translateY(10%); }
+          100% { transform: translateX(-50%) translateY(-10%); }
+        }
+
+        @keyframes moveInCircle {
+          0% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div 
-          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-60 animate-gradient-first"
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-60"
           style={{
             background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.4) 0%, rgba(175, 99, 11, 0) 50%)',
             mixBlendMode: 'screen',
             transformOrigin: 'center center',
-            filter: 'blur(60px)'
+            filter: 'blur(60px)',
+            animation: 'moveVertical 30s ease infinite'
           }}
         ></div>
         
         <div 
-          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50 animate-gradient-second"
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50"
           style={{
             background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.35) 0%, rgba(175, 99, 11, 0) 50%)',
             mixBlendMode: 'screen',
             transformOrigin: 'calc(50% - 400px)',
-            filter: 'blur(60px)'
+            filter: 'blur(60px)',
+            animation: 'moveInCircle 20s reverse infinite'
           }}
         ></div>
         
         <div 
-          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-55 animate-gradient-third"
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-55"
           style={{
             background: 'radial-gradient(circle at center, rgba(146, 83, 9, 0.4) 0%, rgba(146, 83, 9, 0) 50%)',
             mixBlendMode: 'screen',
             transformOrigin: 'calc(50% + 400px)',
-            filter: 'blur(60px)'
+            filter: 'blur(60px)',
+            animation: 'moveInCircle 40s linear infinite'
           }}
         ></div>
         
         <div 
-          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-45 animate-gradient-fourth"
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-45"
           style={{
             background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.3) 0%, rgba(175, 99, 11, 0) 50%)',
             mixBlendMode: 'screen',
             transformOrigin: 'calc(50% - 200px)',
-            filter: 'blur(60px)'
+            filter: 'blur(60px)',
+            animation: 'moveHorizontal 40s ease infinite'
           }}
         ></div>
         
         <div 
-          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50 animate-gradient-fifth"
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50"
           style={{
             background: 'radial-gradient(circle at center, rgba(146, 83, 9, 0.35) 0%, rgba(146, 83, 9, 0) 50%)',
             mixBlendMode: 'screen',
             transformOrigin: 'center center',
-            filter: 'blur(60px)'
+            filter: 'blur(60px)',
+            animation: 'moveInCircle 20s ease infinite'
           }}
         ></div>
       </div>
@@ -71,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
           <img 
             src={logoUrl} 
             alt="Con Ganas Logo" 
-            className="h-8 md:h-14 w-auto object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+            className="h-8 md:h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-500"
           />
         </div>
         <div className="flex items-center gap-4 md:gap-8">
@@ -99,15 +122,15 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
             </div>
             
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[0.9] tracking-tighter">
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[1.1] tracking-[-0.02em]">
                 80% FAIL <br />
                 <span className="text-[#AF630B] italic">BY FEB.</span>
               </h1>
               <div className="w-16 md:w-24 h-1.5 bg-[#AF630B] mx-auto lg:mx-0"></div>
             </div>
             
-            <p className="text-lg md:text-2xl text-white/60 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-              Most resolutions are built on a fragile "why". We build a foundation of <span className="text-white font-bold italic">Con Ganas</span>—discipline and heart.
+            <p className="text-lg md:text-2xl text-white/60 max-w-xl mx-auto lg:mx-0 font-light leading-[1.6] tracking-normal">
+              Most resolutions are built on a fragile "why". We build a foundation of <span className="text-white font-bold italic">Con Ganas</span> discipline and heart.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4 items-center justify-center lg:justify-start">
@@ -132,7 +155,7 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
              <div className="relative aspect-[4/5] bg-neutral-900 rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
                 <img 
                   src={coachImageUrl} 
-                  alt="Ivan - Con Ganas Coaching" 
+                  alt="Ivan Con Ganas Coaching" 
                   className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
