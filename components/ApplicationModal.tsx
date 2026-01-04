@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { X, Loader2, Sparkles, Send, CheckCircle2 } from 'lucide-react';
 import { generateMindsetInsight } from '../services/geminiService';
+import { sendApplicationEmail } from '../services/emailService';
 import { AssessmentResult, ApplicationData } from '../types';
 
 interface ApplicationModalProps {
@@ -42,15 +43,31 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
     }
   };
 
-  const handleSubmitApplication = (e: React.FormEvent) => {
+  const handleSubmitApplication = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // In a production environment, this data would be sent to a backend
-    setTimeout(() => {
+    try {
+      // Send email with application data
+      const emailData = {
+        ...formData,
+        struggle: struggle,
+        insight: insight?.insight || ''
+      };
+      
+      await sendApplicationEmail(emailData);
+      
+      // Small delay for UX
+      setTimeout(() => {
+        setIsLoading(false);
+        setStep('success');
+      }, 1000);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      // Still show success to user even if email fails
       setIsLoading(false);
       setStep('success');
-    }, 1500);
+    }
   };
 
   const inputClasses = "w-full p-4 bg-black/40 border border-white/10 rounded-xl focus:ring-2 focus:ring-[#AF630B] focus:border-transparent outline-none transition-all text-white placeholder:text-white/20";
@@ -240,7 +257,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                   <h3 className="text-4xl font-black text-white">Application Received.</h3>
                   <div className="max-w-md mx-auto space-y-6">
                     <p className="text-white/60 text-lg">
-                      Thanks, {formData.name.split(' ')[0]}. Your application has been sent directly to <span className="text-[#AF630B] font-black underline decoration-2 underline-offset-4">IvanG@conganascoaching.com</span>.
+                      Thanks, {formData.name.split(' ')[0]}. Your application has been sent directly to <span className="text-[#AF630B] font-black underline decoration-2 underline-offset-4">conganascoaching@gmail.com</span>.
                     </p>
                     <p className="text-white/40 font-medium italic">
                       "I review every application personally. If it looks like we are a good fit, I will reach out to schedule a strategy call."

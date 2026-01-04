@@ -3,8 +3,7 @@ import React from 'react';
 import { Mail, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const logoId = '18tgSvGF9RBWWiF1o9_PGSujE8RHrSRT7';
-  const logoUrl = `https://lh3.googleusercontent.com/d/${logoId}`;
+  const logoUrl = "/logo-all-white.png";
 
   return (
     <footer className="relative bg-[#151819] text-white py-28 px-6 overflow-hidden">
@@ -21,7 +20,7 @@ const Footer: React.FC = () => {
           <img 
             src={logoUrl} 
             alt="Con Ganas Logo" 
-            className="h-24 md:h-36 w-auto object-contain brightness-0 invert opacity-90 transition-opacity"
+            className="h-24 md:h-36 w-auto object-contain opacity-90 transition-opacity"
           />
           <div className="w-20 h-1 bg-[#AF630B] mx-auto rounded-full shadow-[0_0_25px_rgba(175,99,11,0.4)]"></div>
         </div>
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
                   className="flex items-center gap-4 text-[#AF630B] hover:text-white transition-colors"
                 >
                   <Mail className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-xl font-black tracking-tight">IvanG@conganascoaching.com</span>
+                  <span className="text-xl font-black leading-[1.2] tracking-[-0.01em]">IvanG@conganascoaching.com</span>
                 </a>
               </div>
             </div>
@@ -48,8 +47,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="space-y-1">
                 <p className="font-black text-[#AF630B] uppercase tracking-[0.3em] text-[10px] mb-2">Location</p>
-                <p className="text-2xl font-black text-white tracking-tight leading-none mb-1">HVY Industry</p>
-                <div className="text-white/80 font-bold text-lg leading-relaxed">
+                <p className="text-2xl font-black text-white leading-[1.2] tracking-[-0.01em] mb-1">HVY Industry</p>
+                <div className="text-white/80 font-bold text-lg leading-[1.6] tracking-normal">
                   <p>7819 Beverly Blvd</p>
                   <p>Los Angeles, CA 90036</p>
                   <p className="tracking-[0.4em] opacity-40 uppercase text-[9px] mt-3 font-black">United States</p>

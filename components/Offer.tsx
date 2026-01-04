@@ -9,7 +9,7 @@ const OfferItem: React.FC<{ icon: React.ReactNode, title: string, description: s
     </div>
     <div className="space-y-2">
       <h3 className="text-xl font-bold text-[#151819]">{title}</h3>
-      <p className="text-gray-500 leading-relaxed">{description}</p>
+      <p className="text-gray-500 leading-[1.6] tracking-normal">{description}</p>
     </div>
   </div>
 );
@@ -19,8 +19,8 @@ const Offer: React.FC = () => {
     <section className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto space-y-16">
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#151819]">More Than Just A Workout Plan.</h2>
-          <p className="text-[#BCBFCC] text-lg font-light tracking-wide">The pillars of a luxury transformation.</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#151819] leading-[1.2] tracking-[-0.01em]">More Than Just A Workout Plan.</h2>
+          <p className="text-[#BCBFCC] text-lg font-light leading-[1.6] tracking-normal">The pillars of a luxury transformation.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
