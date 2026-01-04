@@ -13,9 +13,57 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
 
   return (
     <section className="relative min-h-[100dvh] flex flex-col bg-[#0f1112] px-4 sm:px-6 overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[40%] bg-[#AF630B] opacity-[0.05] blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[40%] bg-[#AF630B] opacity-[0.05] blur-[120px] rounded-full"></div>
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div 
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-60 animate-gradient-first"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.4) 0%, rgba(175, 99, 11, 0) 50%)',
+            mixBlendMode: 'screen',
+            transformOrigin: 'center center',
+            filter: 'blur(60px)'
+          }}
+        ></div>
+        
+        <div 
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50 animate-gradient-second"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.35) 0%, rgba(175, 99, 11, 0) 50%)',
+            mixBlendMode: 'screen',
+            transformOrigin: 'calc(50% - 400px)',
+            filter: 'blur(60px)'
+          }}
+        ></div>
+        
+        <div 
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-55 animate-gradient-third"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(146, 83, 9, 0.4) 0%, rgba(146, 83, 9, 0) 50%)',
+            mixBlendMode: 'screen',
+            transformOrigin: 'calc(50% + 400px)',
+            filter: 'blur(60px)'
+          }}
+        ></div>
+        
+        <div 
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-45 animate-gradient-fourth"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(175, 99, 11, 0.3) 0%, rgba(175, 99, 11, 0) 50%)',
+            mixBlendMode: 'screen',
+            transformOrigin: 'calc(50% - 200px)',
+            filter: 'blur(60px)'
+          }}
+        ></div>
+        
+        <div 
+          className="absolute w-[100%] h-[100%] top-[calc(50%-50%)] left-[calc(50%-50%)] opacity-50 animate-gradient-fifth"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(146, 83, 9, 0.35) 0%, rgba(146, 83, 9, 0) 50%)',
+            mixBlendMode: 'screen',
+            transformOrigin: 'center center',
+            filter: 'blur(60px)'
+          }}
+        ></div>
       </div>
 
       <nav className="relative z-20 w-full max-w-7xl mx-auto py-6 md:py-8 flex items-center justify-between">
