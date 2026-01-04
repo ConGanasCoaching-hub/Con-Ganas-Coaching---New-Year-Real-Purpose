@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
         <div className="pt-20 border-t border-white/10 w-full text-white/30 text-[10px] font-black uppercase tracking-[0.3em] flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="drop-shadow-sm">© 2025 CON GANAS COACHING / ALL RIGHTS RESERVED.</p>
           <div className="flex gap-10">
-             <a href="#" className="hover:text-[#AF630B] transition-colors">Privacy</a>
-             <a href="#" className="hover:text-[#AF630B] transition-colors">Terms</a>
+             <a href="#privacy" className="hover:text-[#AF630B] transition-colors">Privacy</a>
+             <a href="#terms" className="hover:text-[#AF630B] transition-colors">Terms</a>
              <a 
                href="https://www.instagram.com/" 
                target="_blank" 
