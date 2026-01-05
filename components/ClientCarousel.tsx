@@ -11,11 +11,14 @@ const clients = [
   { id: '5', url: 'https://lh3.googleusercontent.com/d/1q1zkM2WfB0Or1epf-r50QtajKdnxa-K2', tag: 'RECLAIMED' },
   { id: '6', url: 'https://lh3.googleusercontent.com/d/1CHF1IC6EU9Pb9wzA1vO08ROhQxFauYxc', tag: 'GRIT' },
   { id: '7', url: 'https://lh3.googleusercontent.com/d/175ixRL10MMglGWrvNq0JcLTQ39oyNr56', tag: 'STRENGTH' },
+  { id: 'noah', url: '/noah.jpeg', tag: 'COMMITMENT' },
 ];
 
 const ClientCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(1);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +37,34 @@ const ClientCarousel: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? clients.length - visibleCount : prev - 1));
+  };
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      // Swipe left - next slide
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      // Swipe right - previous slide
+      prevSlide();
+    }
+    
+    // Reset
+    setTouchStart(0);
+    setTouchEnd(0);
   };
 
   useEffect(() => {
@@ -68,16 +99,26 @@ const ClientCarousel: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative group px-4 overflow-hidden">
+      <div className="relative group px-2 sm:px-4 overflow-hidden">
         <div 
-          className="flex transition-transform duration-700 ease-in-out gap-4 md:gap-6" 
-          style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
+          className="flex transition-transform duration-700 ease-in-out gap-3 sm:gap-4 md:gap-6 touch-pan-x" 
+          style={{ 
+            transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+            touchAction: 'pan-y pinch-zoom'
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {clients.map((client) => (
             <div 
               key={client.id} 
-              className="flex-shrink-0 relative overflow-hidden rounded-3xl group/card shadow-lg bg-gray-100 aspect-[3/4]"
-              style={{ width: `calc(${100 / visibleCount}% - ${((visibleCount - 1) * 24) / visibleCount}px)` }}
+              className="flex-shrink-0 relative overflow-hidden rounded-2xl md:rounded-3xl group/card shadow-lg bg-gray-100 aspect-[3/4]"
+              style={{ 
+                width: visibleCount === 1 
+                  ? `calc(100% - 12px)` 
+                  : `calc(${100 / visibleCount}% - ${((visibleCount - 1) * (visibleCount === 2 ? 16 : 24)) / visibleCount}px)`
+              }}
             >
               <img 
                 src={client.url} 
@@ -85,8 +126,8 @@ const ClientCarousel: React.FC = () => {
                 className="w-full h-full object-cover grayscale brightness-95 group-hover/card:grayscale-0 group-hover/card:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-40 group-hover/card:opacity-70 transition-opacity"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-white text-[9px] font-black tracking-[0.4em] uppercase">
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6">
+                <span className="text-white text-[8px] md:text-[9px] font-black tracking-[0.3em] md:tracking-[0.4em] uppercase">
                   {client.tag}
                 </span>
               </div>
