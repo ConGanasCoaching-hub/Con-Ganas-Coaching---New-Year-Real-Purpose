@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
   const coachImageUrl = "https://lh3.googleusercontent.com/d/1ZsFqhvE08HU1cBb5qRR6iIrTcSK2hn7c";
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-[#0f1112] px-4 sm:px-6 overflow-hidden">
+    <section className="relative min-h-[100dvh] min-h-[100svh] flex flex-col bg-[#0f1112] px-4 sm:px-6 pb-[env(safe-area-inset-bottom)] overflow-hidden">
       <style>{`
         @keyframes moveVertical {
           0% { transform: translateY(-50%); }
@@ -89,63 +89,54 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
         ></div>
       </div>
 
-      <nav className="relative z-20 w-full max-w-7xl mx-auto py-6 md:py-8 flex items-center justify-between">
+      <nav className="relative z-20 w-full max-w-7xl mx-auto py-5 sm:py-6 md:py-8 flex items-center justify-between px-0">
         <div className="flex items-center group cursor-pointer">
           <img 
             src={logoUrl} 
             alt="Con Ganas Logo" 
-            className="h-8 md:h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-500"
+            className="h-7 sm:h-8 md:h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-500 max-w-[140px] sm:max-w-none"
           />
         </div>
-        <div className="flex items-center gap-4 md:gap-8">
-          <button 
-            onClick={onApply}
-            className="hidden sm:block text-white/50 hover:text-white text-[10px] font-black uppercase tracking-[0.4em] transition-all"
-          >
-            Programs
-          </button>
-          <button 
-            onClick={onApply}
-            className="border border-[#AF630B]/40 hover:border-[#AF630B] px-4 md:px-6 py-2 rounded-full text-white text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.4em] transition-all bg-[#AF630B]/5 backdrop-blur-sm"
-          >
-            Apply Now
-          </button>
-        </div>
+        <button 
+          onClick={onApply}
+          className="border border-[#AF630B]/40 hover:border-[#AF630B] active:scale-95 px-5 py-3 sm:px-6 sm:py-2.5 md:px-6 rounded-full text-white text-[10px] sm:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.4em] transition-all bg-[#AF630B]/5 backdrop-blur-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
+        >
+          Apply
+        </button>
       </nav>
 
-      <div className="flex-1 flex items-center relative z-10 py-12 md:py-0">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="flex-1 flex items-center relative z-10 py-8 sm:py-12 md:py-0">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           <div className="lg:col-span-7 space-y-6 md:space-y-10 text-center lg:text-left">
             <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#AF630B]/10 border border-[#AF630B]/20 rounded-full mx-auto lg:mx-0">
               <span className="flex h-2 w-2 rounded-full bg-[#AF630B] animate-pulse"></span>
-              <span className="text-[#AF630B] text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] uppercase">2026 Winter Intake Now Open</span>
+              <span className="text-[#AF630B] text-[9px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.3em] uppercase">Application-Only Intake</span>
             </div>
             
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[1.1] tracking-[-0.02em]">
-                80% FAIL <br />
-                <span className="text-[#AF630B] italic">BY FEB.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white leading-[1.1] tracking-[-0.02em]">
+                PERFORMANCE <br />
+                <span className="text-[#AF630B] italic">REQUIRES COMMITMENT.</span>
               </h1>
               <div className="w-16 md:w-24 h-1.5 bg-[#AF630B] mx-auto lg:mx-0"></div>
             </div>
             
-            <p className="text-lg md:text-2xl text-white/60 max-w-xl mx-auto lg:mx-0 font-light leading-[1.6] tracking-normal">
-              Most resolutions are built on a fragile "why". We build a foundation of <span className="text-white font-bold italic">Con Ganas</span> discipline and heart.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 max-w-xl mx-auto lg:mx-0 font-light leading-[1.6] tracking-normal">
+              High-performance coaching for serious professionals. Available online or 1:1 in West Hollywood.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4 items-center justify-center lg:justify-start">
               <button 
                 onClick={onApply}
-                className="w-full sm:w-auto bg-[#AF630B] hover:bg-[#925309] text-white px-8 md:px-12 py-5 md:py-6 rounded-sm font-black text-base md:text-lg transition-all flex items-center justify-center gap-4 group shadow-xl"
+                className="w-full sm:w-auto min-h-[48px] sm:min-h-[56px] bg-[#AF630B] hover:bg-[#925309] active:scale-[0.98] text-white px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-sm font-black text-base md:text-lg transition-all flex items-center justify-center gap-3 sm:gap-4 group shadow-xl"
               >
-                SECURE YOUR SPOT
+                Apply For Coaching
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
               </button>
               
               <div className="flex items-center gap-4 px-6 py-3 border-l border-white/10 hidden md:flex">
                 <div className="text-right">
-                  <p className="text-white font-black text-xl leading-none">04</p>
-                  <p className="text-[#AF630B] text-[8px] font-black uppercase tracking-widest mt-1">Spots Left</p>
+                  <p className="text-white/50 text-[9px] font-black uppercase tracking-[0.3em]">Limited client intake per cycle</p>
                 </div>
               </div>
             </div>
@@ -168,7 +159,7 @@ const Hero: React.FC<HeroProps> = ({ onApply }) => {
         </div>
       </div>
 
-      <div className="relative z-20 w-full max-w-7xl mx-auto py-8 md:py-10 flex flex-col md:flex-row justify-between items-center text-white/30 text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] gap-4 md:gap-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto py-6 sm:py-8 md:py-10 flex flex-col md:flex-row justify-between items-center text-white/30 text-[8px] sm:text-[9px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] gap-3 sm:gap-4 md:gap-0">
         <div className="flex gap-6 md:gap-10">
           <span>Integrity</span>
           <span>Discipline</span>

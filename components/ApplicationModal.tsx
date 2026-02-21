@@ -20,7 +20,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
     name: '', 
     email: '', 
     phone: '', 
-    category: 'Busy Professional needing structure',
+    category: 'Serious professional seeking structure',
     frustration: '',
     vision: ''
   });
@@ -74,33 +74,33 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
   const labelClasses = "text-[10px] font-black uppercase tracking-[0.2em] text-white/40";
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" style={{ paddingLeft: 'max(1rem, env(safe-area-inset-left))', paddingRight: 'max(1rem, env(safe-area-inset-right))' }}>
       <div className="absolute inset-0 bg-black/95 backdrop-blur-md" onClick={onClose}></div>
       
       <div className="relative bg-[#151819] w-full max-w-2xl rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5 overflow-hidden animate-in fade-in zoom-in duration-300 flex flex-col max-h-[90vh]">
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 text-white/30 hover:text-white transition-colors z-20"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 min-w-[44px] min-h-[44px] p-2 flex items-center justify-center text-white/30 hover:text-white transition-colors z-20"
         >
           <X className="w-6 h-6" />
         </button>
 
         <div className="overflow-y-auto custom-scrollbar flex-1">
-          <div className="p-8 md:p-12">
+          <div className="p-5 sm:p-6 md:p-8 lg:p-12">
             {step === 'assessment' && (
               <div className="space-y-8">
                 <div className="space-y-3">
                   <div className="inline-flex items-center gap-2 text-[#AF630B] bg-[#AF630B]/10 border border-[#AF630B]/20 px-3 py-1 rounded-full">
                     <Sparkles className="w-4 h-4" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Step 1: Mindset Calibration</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Step 1: Application</span>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-black text-white leading-tight">Apply for 1:1 Coaching with Ivan</h3>
-                  <p className="text-white/40 font-medium italic">"Only 5 Spots Available for January. Serious Inquiries Only."</p>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Apply For Coaching</h3>
+                  <p className="text-white/40 font-medium">16-week performance coaching. Application-only. Not all applicants are accepted.</p>
                 </div>
 
                 <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
                   <p className="text-sm text-white/60 leading-relaxed">
-                    Con Ganas Coaching provides a bespoke and luxury experience focused on real transformation. We work with individuals ready to train, eat, and live with purpose and heart.
+                    Con Ganas Coaching is application-only. 16-week minimum. Online: $3,500. 1:1 West Hollywood: $150/session, minimum 2x/week for 16 weeks. Limited client intake.
                   </p>
                 </div>
 
@@ -120,7 +120,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                   
                   <button 
                     disabled={isLoading || !struggle.trim()}
-                    className="w-full bg-[#AF630B] text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 disabled:opacity-50 transition-all shadow-xl shadow-[#AF630B]/20 hover:scale-[1.01] active:scale-[0.98]"
+                    className="w-full min-h-[48px] bg-[#AF630B] text-white py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg flex items-center justify-center gap-3 disabled:opacity-50 transition-all shadow-xl shadow-[#AF630B]/20 hover:scale-[1.01] active:scale-[0.98]"
                   >
                     {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : 'Continue to Final Application'}
                   </button>
@@ -193,9 +193,9 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                           onChange={(e) => setFormData({...formData, category: e.target.value})}
                           className={`${inputClasses} appearance-none cursor-pointer`}
                         >
-                          <option className="bg-[#151819]">Busy Professional needing structure</option>
-                          <option className="bg-[#151819]">Bride/Groom preparing for the big day</option>
-                          <option className="bg-[#151819]">Looking to reclaim energy and confidence</option>
+                          <option className="bg-[#151819]">Serious professional seeking structure</option>
+                          <option className="bg-[#151819]">Executive or high-performer</option>
+                          <option className="bg-[#151819]">Goal-oriented individual</option>
                           <option className="bg-[#151819]">Other</option>
                         </select>
                       </div>
@@ -231,7 +231,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
 
                     <button 
                       disabled={isLoading}
-                      className="w-full bg-white text-black py-5 rounded-2xl font-black text-xl flex items-center justify-center gap-3 mt-4 disabled:opacity-70 shadow-2xl transition-all hover:bg-[#AF630B] hover:text-white active:scale-[0.98]"
+                      className="w-full min-h-[48px] bg-white text-black py-4 sm:py-5 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 mt-4 disabled:opacity-70 shadow-2xl transition-all hover:bg-[#AF630B] hover:text-white active:scale-[0.98]"
                     >
                       {isLoading ? (
                         <Loader2 className="w-6 h-6 animate-spin" />
@@ -242,7 +242,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                         </>
                       )}
                     </button>
-                    <p className="text-center text-[10px] text-white/20 font-black uppercase tracking-widest">I will reach out personally within 24 hours.</p>
+                    <p className="text-center text-[10px] text-white/20 font-black uppercase tracking-widest">Applications reviewed weekly. Strategy call scheduled upon approval.</p>
                   </form>
                 </div>
               </div>
@@ -259,8 +259,8 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                     <p className="text-white/60 text-lg">
                       Thanks, {formData.name.split(' ')[0]}. Your application has been sent directly to <span className="text-[#AF630B] font-black underline decoration-2 underline-offset-4">conganascoaching@gmail.com</span>.
                     </p>
-                    <p className="text-white/40 font-medium italic">
-                      "I review every application personally. If it looks like we are a good fit, I will reach out to schedule a strategy call."
+                    <p className="text-white/40 font-medium">
+                      Every application is reviewed personally. Approved applicants receive a strategy call to begin the 16-week cycle.
                     </p>
                   </div>
                 </div>

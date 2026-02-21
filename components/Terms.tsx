@@ -72,13 +72,13 @@ const Terms: React.FC<TermsProps> = ({ onBack }) => {
                   Con Ganas Coaching provides personalized fitness coaching services, including:
                 </p>
                 <ul className="space-y-2 text-white/70 leading-[1.6] tracking-normal list-disc list-inside">
-                  <li>Bespoke training programs tailored to individual needs</li>
-                  <li>Nutrition guidance and meal planning</li>
-                  <li>Mindset coaching and accountability support</li>
-                  <li>24/7 communication and support</li>
+                  <li>Strategic strength programming</li>
+                  <li>High-compliance nutrition structure</li>
+                  <li>Accountability and measurable performance tracking</li>
+                  <li>16-week online coaching or private 1:1 training in West Hollywood</li>
                 </ul>
                 <p className="text-white/70 leading-[1.6] tracking-normal mt-4">
-                  Services are provided on a one-on-one basis and are subject to availability.
+                  All clients commit to a 16-week coaching cycle. Services are application-only and subject to availability. Both online coaching and 1:1 West Hollywood training follow the same system.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ const Terms: React.FC<TermsProps> = ({ onBack }) => {
             <div className="space-y-4">
               <h2 className="text-2xl font-black text-white">Application and Acceptance Process</h2>
               <p className="text-white/70 leading-[1.6] tracking-normal">
-                Submission of an application does not guarantee acceptance into our coaching program. We reserve the right to accept or decline applications at our sole discretion. Only 5 spots are available per intake period.
+                Submission of an application does not guarantee acceptance. Applications are reviewed weekly. Online coaching is capped at 12 active clients per cycle. 1:1 West Hollywood training maintains limited private slots. Not all applicants are accepted.
               </p>
             </div>
           </section>
@@ -118,7 +118,7 @@ const Terms: React.FC<TermsProps> = ({ onBack }) => {
             <div className="space-y-4">
               <h2 className="text-2xl font-black text-white">Payment Terms</h2>
               <p className="text-white/70 leading-[1.6] tracking-normal">
-                Payment terms and pricing will be discussed and agreed upon during the application process. All fees are non-refundable unless otherwise specified in a written agreement. Payment is due according to the schedule agreed upon between you and Con Ganas Coaching.
+                Online coaching: $3,500 for the full 16-week program ($3,500 paid in full or 4 payments of $975). 1:1 West Hollywood: $150/session, minimum 2 sessions per week for 16 weeks (32 sessions minimum). All fees are non-refundable except as specified in the Commitment Guarantee (14-day period). Payment is due according to the schedule agreed upon.
               </p>
             </div>
           </section>

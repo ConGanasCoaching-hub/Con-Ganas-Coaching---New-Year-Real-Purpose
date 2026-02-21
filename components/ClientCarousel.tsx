@@ -73,33 +73,33 @@ const ClientCarousel: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <section className="bg-white py-16 md:py-24 overflow-hidden border-y border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <section className="bg-white py-10 sm:py-16 md:py-24 overflow-hidden border-y border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6">
         <div className="space-y-4 text-center md:text-left">
           <div className="inline-block px-3 py-1 bg-[#AF630B]/10 rounded-md">
             <span className="text-[#AF630B] text-[10px] font-black tracking-widest uppercase">The Results</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#151819] leading-[1.2] tracking-[-0.01em]">The Proof of Purpose.</h2>
-          <p className="text-[#BCBFCC] max-w-md mx-auto md:mx-0 font-light italic leading-[1.6] tracking-normal">Real people, the same mission: To transform with Con Ganas.</p>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#151819] leading-[1.2] tracking-[-0.02em]">Measurable Results.</h2>
+          <p className="text-[#BCBFCC] max-w-md mx-auto md:mx-0 font-light leading-[1.6] tracking-normal">Structure. Commitment. Progress. Real outcomes from the Con Ganas system.</p>
         </div>
         
-        <div className="flex gap-4 justify-center md:justify-end">
+        <div className="flex gap-3 sm:gap-4 justify-center md:justify-end">
           <button 
             onClick={prevSlide}
-            className="p-3 md:p-4 rounded-full border border-gray-200 hover:bg-[#151819] hover:text-white transition-all active:scale-95"
+            className="min-w-[44px] min-h-[44px] p-3 md:p-4 rounded-full border border-gray-200 hover:bg-[#151819] hover:text-white transition-all active:scale-95 flex items-center justify-center"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button 
             onClick={nextSlide}
-            className="p-3 md:p-4 rounded-full border border-gray-200 hover:bg-[#151819] hover:text-white transition-all active:scale-95"
+            className="min-w-[44px] min-h-[44px] p-3 md:p-4 rounded-full border border-gray-200 hover:bg-[#151819] hover:text-white transition-all active:scale-95 flex items-center justify-center"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
       </div>
 
-      <div className="relative group px-2 sm:px-4 overflow-hidden">
+      <div className="relative group px-3 sm:px-4 overflow-hidden -mx-1 sm:mx-0">
         <div 
           className="flex transition-transform duration-700 ease-in-out gap-3 sm:gap-4 md:gap-6 touch-pan-x" 
           style={{ 
