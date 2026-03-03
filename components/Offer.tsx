@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Utensils, Zap } from 'lucide-react';
+import { Target, Utensils, Zap, CheckCircle, TrendingUp, Clock, Users, Dumbbell } from 'lucide-react';
 
 const OfferItem: React.FC<{ icon: React.ReactNode, title: string, description: string }> = ({ icon, title, description }) => (
   <div className="flex gap-4 sm:gap-6 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-100 hover:border-[#AF630B]/20 hover:shadow-xl hover:shadow-[#AF630B]/5 transition-all duration-300">
@@ -11,6 +11,13 @@ const OfferItem: React.FC<{ icon: React.ReactNode, title: string, description: s
       <h3 className="text-lg sm:text-xl font-bold text-[#151819]">{title}</h3>
       <p className="text-gray-500 text-sm sm:text-base leading-[1.6] tracking-normal">{description}</p>
     </div>
+  </div>
+);
+
+const ValueItem: React.FC<{ text: string }> = ({ text }) => (
+  <div className="flex items-start gap-3">
+    <CheckCircle className="w-5 h-5 text-[#AF630B] shrink-0 mt-0.5" />
+    <p className="text-gray-600 text-sm sm:text-base leading-[1.6]">{text}</p>
   </div>
 );
 
@@ -42,6 +49,23 @@ const Offer: React.FC = () => {
         </div>
 
         <div className="pt-8 sm:pt-12 border-t border-gray-100">
+          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mb-10 sm:mb-14">
+            <p className="text-[#AF630B] text-xs sm:text-sm font-black uppercase tracking-[0.3em]">Here's Everything You Get</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#151819] tracking-[-0.01em] leading-[1.2]">16 Weeks of Complete<br className="hidden sm:block" /> Transformation Coaching</h3>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4 sm:space-y-5">
+            <ValueItem text="Fully customized strength training program — rebuilt every phase based on your progress" />
+            <ValueItem text="Personalized nutrition structure designed around YOUR life, YOUR schedule, YOUR preferences" />
+            <ValueItem text="Weekly 1-on-1 accountability check-ins — you never drift off track" />
+            <ValueItem text="Direct access to your coach — not a chatbot, not a generic template. A real human who knows your name" />
+            <ValueItem text="Progressive performance tracking so you can SEE yourself getting stronger every single week" />
+            <ValueItem text="Mindset and habit coaching — because the body follows the mind" />
+            <ValueItem text="Full program adjustments as you progress — your plan evolves as YOU evolve" />
+          </div>
+        </div>
+
+        <div className="pt-8 sm:pt-12 border-t border-gray-100">
           <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mb-8 sm:mb-12">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#151819] tracking-[-0.01em]">Choose Your Delivery</h3>
             <p className="text-[#BCBFCC] text-base font-light max-w-2xl mx-auto">Both options follow the same 16-week system. Both require application approval.</p>
@@ -50,12 +74,20 @@ const Offer: React.FC = () => {
             <div className="flex flex-col gap-4 sm:gap-6 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-100 hover:border-[#AF630B]/20 hover:shadow-xl hover:shadow-[#AF630B]/5 transition-all duration-300">
               <span className="text-[#AF630B] text-[10px] font-black uppercase tracking-[0.3em]">Option 1</span>
               <h3 className="text-lg sm:text-xl font-bold text-[#151819]">16-Week Online Performance Coaching</h3>
-              <p className="text-gray-500 text-sm sm:text-base leading-[1.6] tracking-normal">$3,500 for the full 16-week program. Remote coaching with structured programming, weekly check-ins, accountability, and measurable tracking.</p>
+              <p className="text-gray-500 text-sm sm:text-base leading-[1.6] tracking-normal">Remote coaching with full programming, weekly check-ins, accountability, and measurable tracking. Everything you need — from anywhere in the world.</p>
+              <div className="flex items-center gap-2 mt-auto pt-3 border-t border-gray-100">
+                <TrendingUp className="w-4 h-4 text-[#AF630B]" />
+                <span className="text-xs font-bold text-[#AF630B] uppercase tracking-wider">Investment discussed on strategy call</span>
+              </div>
             </div>
             <div className="flex flex-col gap-4 sm:gap-6 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-100 hover:border-[#AF630B]/20 hover:shadow-xl hover:shadow-[#AF630B]/5 transition-all duration-300">
               <span className="text-[#AF630B] text-[10px] font-black uppercase tracking-[0.3em]">Option 2</span>
               <h3 className="text-lg sm:text-xl font-bold text-[#151819]">16-Week Private 1:1 Training — West Hollywood</h3>
-              <p className="text-gray-500 text-sm sm:text-base leading-[1.6] tracking-normal">In-person training at a private gym. $150/session. Minimum 2 sessions per week for 16 weeks. Direct coaching and structured progression.</p>
+              <p className="text-gray-500 text-sm sm:text-base leading-[1.6] tracking-normal">In-person training at a private gym. Hands-on coaching, structured progression, and direct accountability. The highest level of the Con Ganas experience.</p>
+              <div className="flex items-center gap-2 mt-auto pt-3 border-t border-gray-100">
+                <Dumbbell className="w-4 h-4 text-[#AF630B]" />
+                <span className="text-xs font-bold text-[#AF630B] uppercase tracking-wider">Limited private slots available</span>
+              </div>
             </div>
           </div>
         </div>

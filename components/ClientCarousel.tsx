@@ -3,15 +3,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const clients = [
-  { id: '1', url: 'https://lh3.googleusercontent.com/d/18RqpmT4afKvGoyCH4U7GuU2b6bdlvmrV', tag: 'DEDICATION' },
-  { id: '2', url: 'https://lh3.googleusercontent.com/d/1ZV-pSNWs_RyIcQkTsowLOisq95Tw0TOF', tag: 'TRANSFORMATION' },
-  { id: 'new-1', url: 'https://lh3.googleusercontent.com/d/1t8jASPftaDw-jHeBnr1AmhpN5f8lPW4W', tag: 'ELEVATED' },
-  { id: '3', url: 'https://lh3.googleusercontent.com/d/1w744F9O4IpkSdlsRr894o56MH1ndDMOL', tag: 'DISCIPLINE' },
-  { id: '4', url: 'https://lh3.googleusercontent.com/d/1IR8tdGP_hxb2wsrS8g6nr_8FCgks2mR5', tag: 'PURPOSE' },
-  { id: '5', url: 'https://lh3.googleusercontent.com/d/1q1zkM2WfB0Or1epf-r50QtajKdnxa-K2', tag: 'RECLAIMED' },
-  { id: '6', url: 'https://lh3.googleusercontent.com/d/1CHF1IC6EU9Pb9wzA1vO08ROhQxFauYxc', tag: 'GRIT' },
-  { id: '7', url: 'https://lh3.googleusercontent.com/d/175ixRL10MMglGWrvNq0JcLTQ39oyNr56', tag: 'STRENGTH' },
+  { id: 'stephanie', url: '/client%20photos/Stephanie-4.jpg', tag: 'STRENGTH' },
+  { id: 'bfm', url: '/client%20photos/bfm-before-after.jpg', tag: 'BEFORE & AFTER' },
+  { id: 'conrad', url: '/client%20photos/Conrad.jpg', tag: 'DISCIPLINE' },
+  { id: 'indigo', url: '/client%20photos/Indigo-2.jpg', tag: 'PURPOSE' },
+  { id: 'transformation', url: '/client%20photos/IMG_5553.JPG', tag: 'BEFORE & AFTER' },
+  { id: 'sisters-lunge', url: '/client%20photos/Sisters-10.jpg', tag: 'DEDICATION' },
   { id: 'noah', url: '/noah.jpeg', tag: 'COMMITMENT' },
+  { id: 'sisters-thrust', url: '/client%20photos/Sisters-2.jpg', tag: 'GRIT' },
 ];
 
 const ClientCarousel: React.FC = () => {

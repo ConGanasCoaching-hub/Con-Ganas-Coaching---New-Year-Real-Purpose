@@ -118,7 +118,7 @@ const Terms: React.FC<TermsProps> = ({ onBack }) => {
             <div className="space-y-4">
               <h2 className="text-2xl font-black text-white">Payment Terms</h2>
               <p className="text-white/70 leading-[1.6] tracking-normal">
-                Online coaching: $3,500 for the full 16-week program ($3,500 paid in full or 4 payments of $975). 1:1 West Hollywood: $150/session, minimum 2 sessions per week for 16 weeks (32 sessions minimum). All fees are non-refundable except as specified in the Commitment Guarantee (14-day period). Payment is due according to the schedule agreed upon.
+                Investment details and payment options are discussed during the strategy call following application approval. Both full-pay and payment plan options are available. All fees are non-refundable except as specified in the Commitment Guarantee (14-day period). Payment is due according to the schedule agreed upon.
               </p>
             </div>
           </section>

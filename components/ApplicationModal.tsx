@@ -92,16 +92,19 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                 <div className="space-y-3">
                   <div className="inline-flex items-center gap-2 text-[#AF630B] bg-[#AF630B]/10 border border-[#AF630B]/20 px-3 py-1 rounded-full">
                     <Sparkles className="w-4 h-4" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Step 1: Application</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Limited Spots Available</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Apply For Coaching</h3>
-                  <p className="text-white/40 font-medium">16-week performance coaching. Application-only. Not all applicants are accepted.</p>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">You're One Step Away.</h3>
+                  <p className="text-white/50 font-medium">Most people will close this window and change nothing. The ones who fill this out are the ones who actually change.</p>
                 </div>
 
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
-                  <p className="text-sm text-white/60 leading-relaxed">
-                    Con Ganas Coaching is application-only. 16-week minimum. Online: $3,500. 1:1 West Hollywood: $150/session, minimum 2x/week for 16 weeks. Limited client intake.
-                  </p>
+                <div className="bg-[#AF630B]/10 p-5 rounded-2xl border border-[#AF630B]/20">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-[#AF630B] mt-2 shrink-0 animate-pulse"></div>
+                    <p className="text-sm text-white/70 leading-relaxed font-medium">
+                      Only <span className="text-[#AF630B] font-black">12 online spots</span> per cycle. Limited 1:1 slots in West Hollywood. Once they're filled, this application closes until the next intake.
+                    </p>
+                  </div>
                 </div>
 
                 <form onSubmit={handleAssessment} className="space-y-6">
@@ -122,7 +125,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                     disabled={isLoading || !struggle.trim()}
                     className="w-full min-h-[48px] bg-[#AF630B] text-white py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg flex items-center justify-center gap-3 disabled:opacity-50 transition-all shadow-xl shadow-[#AF630B]/20 hover:scale-[1.01] active:scale-[0.98]"
                   >
-                    {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : 'Continue to Final Application'}
+                    {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : 'Submit & Secure Your Spot'}
                   </button>
                   <p className="text-center text-[10px] text-white/20 uppercase tracking-widest font-bold">Your privacy is strictly guarded.</p>
                 </form>
@@ -204,15 +207,28 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                     <div className="space-y-6 pt-6 border-t border-white/5">
                        <div className="space-y-3">
                         <label className="text-sm font-bold text-white/80 block">
-                          What is your #1 frustration with your health or energy?
+                          Which training format are you interested in?
                         </label>
-                        <textarea 
-                          required
-                          value={formData.frustration}
-                          onChange={(e) => setFormData({...formData, frustration: e.target.value})}
-                          placeholder="Be specific. Is it lack of time? Lack of knowledge? Lack of motivation?"
-                          className={`${inputClasses} h-32 resize-none`}
-                        />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {[
+                            { value: 'Online Coaching', label: 'Online Coaching', desc: 'Train from anywhere' },
+                            { value: '1:1 In-Person (West Hollywood)', label: '1:1 In-Person', desc: 'West Hollywood' },
+                          ].map((option) => (
+                            <button
+                              key={option.value}
+                              type="button"
+                              onClick={() => setFormData({...formData, frustration: option.value})}
+                              className={`p-4 rounded-xl border text-left transition-all ${
+                                formData.frustration === option.value
+                                  ? 'border-[#AF630B] bg-[#AF630B]/15 ring-1 ring-[#AF630B]'
+                                  : 'border-white/10 bg-black/40 hover:border-white/20'
+                              }`}
+                            >
+                              <p className={`font-bold text-sm ${formData.frustration === option.value ? 'text-[#AF630B]' : 'text-white'}`}>{option.label}</p>
+                              <p className="text-white/40 text-xs mt-1">{option.desc}</p>
+                            </button>
+                          ))}
+                        </div>
                       </div>
 
                       <div className="space-y-3">
